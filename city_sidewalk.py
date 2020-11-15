@@ -2,8 +2,8 @@ import os
 import boto3
 import pandas as pd
 
-ACCESS_KEY = 'AKIASJWUPBMEBDXVGFUK'
-SECRET_KEY = '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'
+ACCESS_KEY = '********************'
+SECRET_KEY = '*****************************'
 
 # Create AWS 3 clients 'S3','translate' and  'comprehend'
 s3 = boto3.client('s3', region_name='us-east-1',
@@ -27,7 +27,7 @@ sns = boto3.client('sns',
 # This function Upload our datasets from local disc to amazon S3
 def upload_objects_to_s3():
     try:
-        root_path = 'C:/Users/kon-boot/Desktop/project/projectbd/city-of-bloomington'
+        root_path = 'C:/****/*******/******/*******/projectbd/city-of-bloomington'
         i = 1
         for path, subdirs, files in os.walk(root_path):
             for file in files:
@@ -83,8 +83,8 @@ def detect_sentiment(my_dataframe):
 
             my_dataframe.loc[index, 'sent_iment'] = resp['Sentiment']
 
-    # my_dataframe.to_csv(r'C:\Users\kon-boot\Desktop\project\projectbd\city-of-bloomington\df_result.csv', index=False,
-    # header=True)
+     my_dataframe.to_csv(r'C:\*****\*******\*******\*****\******\city-of-bloomington\df_result.csv', index=False,
+     header=True)
     print(my_dataframe)
     return my_dataframe
 
